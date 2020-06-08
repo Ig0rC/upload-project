@@ -3,16 +3,17 @@ import '@babel/polyfill';
 import express, { json } from 'express';
 import morgan from 'morgan';
 
+
 // importação de rotas
 import projectRoutes from './routes/projects';
 import taskRoutes from './routes/tasks'
 
 const app = express();
-
+const cors = require("cors");
 
 
 //middlawares 
-
+app.use(cors());
 app.use(morgan('dev'));
 app.use(json());
 
